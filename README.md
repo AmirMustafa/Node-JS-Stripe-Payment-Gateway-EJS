@@ -108,10 +108,17 @@ console.log(`Listening in port 3000`);
 2. views/store.ejs  (CLIENT - EJS) - Note when ever you want to pass some data from server to client that file move from public to view rest all are in sync
 
 ```
-<script src="https://checkout.stripe.com/checkout.js" defer></script>
+<head>
+    <title>The Generics | Store</title>
+    <meta name="description" content="This is the description" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
     <script>
       var stripePublicKey = "<%= stripePublicKey %>";
     </script>
+    <script src="store.js" defer></script>
+</head>
+<body>
     ...
     ...
     <% items.music.forEach(function(item){ %>
@@ -126,6 +133,10 @@ console.log(`Listening in port 3000`);
           </div>
         </div>
         <% }) %>
+        
+    ...
+    ...
+ </body>
 ```
 
 3. public/store.js  (CLIENT - JS file of EJS)
